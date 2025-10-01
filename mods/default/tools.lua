@@ -28,7 +28,7 @@ minetest.register_tool("default:pick_wood", {
 	wield_scale = {x=2,y=2,z=1},
 	inventory_image = "default_tool_woodpick.png",
 	tool_capabilities = {
-		full_punch_interval = 1.2,
+		full_punch_interval = 0.2,
 		max_drop_level=0,
 		groupcaps={
 			cracky = {times={[3]=1.60}, uses=10, maxlevel=1},
@@ -44,7 +44,7 @@ minetest.register_tool("default:pick_stone", {
 	wield_scale = {x=2,y=2,z=1},
 	inventory_image = "default_tool_stonepick.png",
 	tool_capabilities = {
-		full_punch_interval = 1.3,
+		full_punch_interval = 0.2,
 		max_drop_level=0,
 		groupcaps={
 			cracky = {times={[2]=2.0, [3]=0.85}, uses=20, maxlevel=1},
@@ -60,7 +60,7 @@ minetest.register_tool("default:pick_steel", {
 	wield_scale = {x=2,y=2,z=1},
 	inventory_image = "default_tool_steelpick.png",
 	tool_capabilities = {
-		full_punch_interval = 1.0,
+		full_punch_interval = 0.2,
 		max_drop_level=1,
 		groupcaps={
 			cracky = {times={[1]=4.00, [2]=1.60, [3]=0.80}, uses=20, maxlevel=2},
@@ -76,7 +76,7 @@ minetest.register_tool("default:pick_diamond", {
 	wield_scale = {x=2,y=2,z=1},
 	inventory_image = "default_tool_diamondpick.png",
 	tool_capabilities = {
-		full_punch_interval = 0.9,
+		full_punch_interval = 0.2,
 		max_drop_level=3,
 		groupcaps={
 			cracky = {times={[1]=2.0, [2]=1.0, [3]=0.50}, uses=30, maxlevel=3},
@@ -97,7 +97,7 @@ minetest.register_tool("default:shovel_wood", {
 	inventory_image = "default_tool_woodshovel.png",
 	wield_image = "default_tool_woodshovel.png",
 	tool_capabilities = {
-		full_punch_interval = 1.2,
+		full_punch_interval = 0.2,
 		max_drop_level=0,
 		groupcaps={
 			crumbly = {times={[1]=3.00, [2]=1.60, [3]=0.60}, uses=10, maxlevel=1},
@@ -114,7 +114,7 @@ minetest.register_tool("default:shovel_stone", {
 	inventory_image = "default_tool_stoneshovel.png",
 	wield_image = "default_tool_stoneshovel.png",
 	tool_capabilities = {
-		full_punch_interval = 1.4,
+		full_punch_interval = 0.2,
 		max_drop_level=0,
 		groupcaps={
 			crumbly = {times={[1]=1.80, [2]=1.20, [3]=0.50}, uses=20, maxlevel=1},
@@ -131,7 +131,7 @@ minetest.register_tool("default:shovel_steel", {
 	inventory_image = "default_tool_steelshovel.png",
 	wield_image = "default_tool_steelshovel.png",
 	tool_capabilities = {
-		full_punch_interval = 1.1,
+		full_punch_interval = 0.2,
 		max_drop_level=1,
 		groupcaps={
 			crumbly = {times={[1]=1.50, [2]=0.90, [3]=0.40}, uses=30, maxlevel=2},
@@ -148,7 +148,7 @@ minetest.register_tool("default:shovel_diamond", {
 	inventory_image = "default_tool_diamondshovel.png",
 	wield_image = "default_tool_diamondshovel.png",
 	tool_capabilities = {
-		full_punch_interval = 1.0,
+		full_punch_interval = 0.2,
 		max_drop_level=1,
 		groupcaps={
 			crumbly = {times={[1]=1.10, [2]=0.50, [3]=0.30}, uses=30, maxlevel=3},
@@ -168,7 +168,7 @@ minetest.register_tool("default:axe_wood", {
 	wield_scale = {x=2,y=2,z=1},
 	inventory_image = "default_tool_woodaxe.png",
 	tool_capabilities = {
-		full_punch_interval = 1.0,
+		full_punch_interval = 0.2,
 		max_drop_level=0,
 		groupcaps={
 			choppy = {times={[2]=3.00, [3]=1.50}, uses=10, maxlevel=1},
@@ -184,7 +184,7 @@ minetest.register_tool("default:axe_stone", {
 	wield_scale = {x=2,y=2,z=1},
 	inventory_image = "default_tool_stoneaxe.png",
 	tool_capabilities = {
-		full_punch_interval = 1.2,
+		full_punch_interval = 0.2,
 		max_drop_level=0,
 		groupcaps={
 			choppy={times={[1]=3.00, [2]=1.00, [3]=0.8}, uses=20, maxlevel=1},
@@ -200,7 +200,7 @@ minetest.register_tool("default:axe_steel", {
 	wield_scale = {x=2,y=2,z=1},
 	inventory_image = "default_tool_steelaxe.png",
 	tool_capabilities = {
-		full_punch_interval = 1.0,
+		full_punch_interval = 0.2,
 		max_drop_level=1,
 		groupcaps={
 			choppy={times={[1]=2.50, [2]=1.40, [3]=1.00}, uses=20, maxlevel=2},
@@ -216,7 +216,7 @@ minetest.register_tool("default:axe_diamond", {
 	wield_scale = {x=2,y=2,z=1},
 	inventory_image = "default_tool_diamondaxe.png",
 	tool_capabilities = {
-		full_punch_interval = 0.9,
+		full_punch_interval = 0.2,
 		max_drop_level=1,
 		groupcaps={
 			choppy={times={[1]=2.10, [2]=0.90, [3]=0.50}, uses=30, maxlevel=3},
@@ -236,7 +236,7 @@ minetest.register_tool("default:sword_wood", {
 	wield_scale = {x=2,y=2,z=1},
 	inventory_image = "default_tool_woodsword.png",
 	tool_capabilities = {
-		full_punch_interval = 1,
+		full_punch_interval = 0.2,
 		max_drop_level=0,
 		groupcaps={
 			snappy={times={[2]=1.6, [3]=0.40}, uses=10, maxlevel=1},
@@ -252,7 +252,7 @@ minetest.register_tool("default:sword_stone", {
 	wield_scale = {x=2,y=2,z=1},
 	inventory_image = "default_tool_stonesword.png",
 	tool_capabilities = {
-		full_punch_interval = 1.2,
+		full_punch_interval = 0.2,
 		max_drop_level=0,
 		groupcaps={
 			snappy={times={[2]=1.4, [3]=0.40}, uses=20, maxlevel=1},
@@ -268,7 +268,7 @@ minetest.register_tool("default:sword_steel", {
 	wield_scale = {x=2,y=2,z=1},
 	inventory_image = "default_tool_steelsword.png",
 	tool_capabilities = {
-		full_punch_interval = 0.8,
+		full_punch_interval = 0.2,
 		max_drop_level=1,
 		groupcaps={
 			snappy={times={[1]=2.5, [2]=1.20, [3]=0.35}, uses=30, maxlevel=2},
@@ -284,7 +284,7 @@ minetest.register_tool("default:sword_diamond", {
 	wield_scale = {x=2,y=2,z=1},
 	inventory_image = "default_tool_diamondsword.png",
 	tool_capabilities = {
-		full_punch_interval = 0.7,
+		full_punch_interval = 0.2,
 		max_drop_level=1,
 		groupcaps={
 			snappy={times={[1]=1.90, [2]=0.90, [3]=0.30}, uses=40, maxlevel=3},

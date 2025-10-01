@@ -68,3 +68,26 @@ minetest.register_craftitem(":mobs:bucket_milk", {
 	on_use = minetest.item_eat(0, "bucket:bucket_empty"),
 	groups = {food_milk = 1, drink = 1}
 })
+
+
+-- Beef
+
+minetest.register_craftitem("otcr_mobs:beef_raw", {
+	description = ("Raw Beef"),
+	inventory_image = "otcr_mobs_beef_raw.png",
+	on_use = minetest.item_eat(2),
+	groups = {food_beef = 1}
+})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "otcr_mobs:beef_cooked",
+	recipe = "otcr_mobs:beef_raw",
+})
+
+minetest.register_craftitem("otcr_mobs:beef_cooked", {
+	description = ("Steak"),
+	inventory_image = "otcr_mobs_beef_cooked.png",
+	on_use = minetest.item_eat(8),
+	groups = {food_beef = 1}
+})

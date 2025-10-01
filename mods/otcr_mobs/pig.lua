@@ -68,7 +68,19 @@ mobs:register_egg("otcr_mobs:pig", ("Pig"), "otcr_mobs_pork_raw.png")
 minetest.register_craftitem("otcr_mobs:pork_raw", {
 	description = ("Raw Porkchop"),
 	inventory_image = "mobs_pork_raw.png",
-	stack_max = 1,
-	on_use = minetest.item_eat(0, "bucket:bucket_empty"),
-	groups = {food_milk = 1, drink = 1}
+	on_use = minetest.item_eat(2),
+	groups = {food_pork = 1}
+})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "otcr_mobs:pork_cooked",
+	recipe = "otcr_mobs:pork_raw",
+})
+
+minetest.register_craftitem("otcr_mobs:pork_cooked", {
+	description = ("Cooked Porkchop"),
+	inventory_image = "mobs_pork_cooked.png",
+	on_use = minetest.item_eat(8),
+	groups = {food_pork = 1}
 })

@@ -21,8 +21,8 @@ mobs:register_mob("otcr_mobs:zombie", {
 	visual_size = {x=3, y=3},
 	makes_footstep_sound = false,
 --	sounds = {random = "mobs_oerkki"},
-	walk_velocity = 0.8,
-	run_velocity = 1.6,
+	walk_velocity = 1,
+	run_velocity = 3,
 	view_range = 16,
 	jump = true,
 	drops = {

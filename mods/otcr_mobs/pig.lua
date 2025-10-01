@@ -61,7 +61,7 @@ end
 
 -- spawn egg
 
-mobs:register_egg("otcr_mobs:pig", ("Pig"), "otcr_mobs_pork_raw.png")
+mobs:register_egg("otcr_mobs:pig", ("Spawn Pig"), "otcr_mobs_pork_raw.png", 1)
 
 -- porkchop
 

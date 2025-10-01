@@ -57,7 +57,7 @@ end
 
 -- spawn egg
 
-mobs:register_egg("otcr_mobs:cow", ("Cow"), "mobs_leather.png")
+mobs:register_egg("otcr_mobs:cow", ("Spawn Cow"), "mobs_leather.png", 1)
 
 -- bucket of milk
 

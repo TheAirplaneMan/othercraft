@@ -11,7 +11,7 @@ mobs:register_mob("otcr_mobs:zombie", {
 	damage = 3,
 	hp_min = 20,
 	hp_max = 20,
-	armor = 90,
+	armor = 100,
 	collisionbox = {-0.3, -0.01, -0.3, 0.3, 1.94, 0.3},
 	visual = "mesh",
 	mesh = "mobs_mc_zombie.b3d",
@@ -26,8 +26,7 @@ mobs:register_mob("otcr_mobs:zombie", {
 	view_range = 16,
 	jump = true,
 	drops = {
-		{name = "default:obsidian", chance = 3, min = 0, max = 2},
-		{name = "default:gold_lump", chance = 2, min = 0, max = 2}
+		{name = "otcr_mobs:rotten_flesh", chance = 1, min = 0, max = 2}
 	},
 	lava_damage = 4,
 	light_damage = 2,
@@ -47,9 +46,22 @@ mobs:spawn({
 	nodes = {"group:cracky", "group:crumbly", "group:choppy"},
 	max_light = 7,
 	chance = 6000,
-	min_height = -60
+	max_height = 256,
+	min_height = -31000
 })
 
 -- spawn egg
 
 mobs:register_egg("otcr_mobs:zombie", ("Spawn Zombie"), "default_mossycobble.png", 1)
+
+
+
+
+-- Rotten Flesh
+
+minetest.register_craftitem("otcr_mobs:rotten_flesh", {
+	description = ("Rotten Flesh"),
+	inventory_image = "otcr_mobs_rotten_flesh.png",
+	on_use = minetest.item_eat(-2),
+	groups = {food_rotten_flesh = 1}
+})

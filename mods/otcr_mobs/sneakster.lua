@@ -23,7 +23,7 @@ mobs:register_mob("otcr_mobs:sneakster", {
 	view_range = 16,
 	jump = true,
 	drops = {
-		{name = "tnt:gunpower", chance = 1, min = 1, max = 2} -- Gunpowder droprate is slightly inaccurate by design
+		{name = "tnt:gunpower", chance = 1, min = 0, max = 3} -- Gunpowder droprate is slightly inaccurate by design
 	},
 	lava_damage = 4,
 	light_damage = 0,
@@ -67,4 +67,4 @@ mobs:spawn({
 
 -- spawn egg
 
-mobs:register_egg("otcr_mobs:sneakster", ("Spawn Sneakster"), "default_grass_top.png", 1)
+mobs:register_egg("otcr_mobs:sneakster", ("Spawn Sneakster"), "default_grass.png", 1)

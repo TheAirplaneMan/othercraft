@@ -18,105 +18,6 @@ minetest.register_alias("mapgen_river_water_source", "default:river_water_source
 
 function default.register_ores()
 
-	-- Stratum ores.
-	-- These obviously first.
-
-	-- Silver sandstone
-
-	minetest.register_ore({
-		ore_type        = "stratum",
-		ore             = "default:silver_sandstone",
-		wherein         = {"default:stone"},
-		clust_scarcity  = 1,
-		y_max           = 46,
-		y_min           = 10,
-		noise_params    = {
-			offset = 28,
-			scale = 16,
-			spread = {x = 128, y = 128, z = 128},
-			seed = 90122,
-			octaves = 1,
-		},
-		stratum_thickness = 4,
-		biomes = {"cold_desert"},
-	})
-
-	minetest.register_ore({
-		ore_type        = "stratum",
-		ore             = "default:silver_sandstone",
-		wherein         = {"default:stone"},
-		clust_scarcity  = 1,
-		y_max           = 42,
-		y_min           = 6,
-		noise_params    = {
-			offset = 24,
-			scale = 16,
-			spread = {x = 128, y = 128, z = 128},
-			seed = 90122,
-			octaves = 1,
-		},
-		stratum_thickness = 2,
-		biomes = {"cold_desert"},
-	})
-
-	-- Desert sandstone
-
-	minetest.register_ore({
-		ore_type        = "stratum",
-		ore             = "default:desert_sandstone",
-		wherein         = {"default:desert_stone"},
-		clust_scarcity  = 1,
-		y_max           = 46,
-		y_min           = 10,
-		noise_params    = {
-			offset = 28,
-			scale = 16,
-			spread = {x = 128, y = 128, z = 128},
-			seed = 90122,
-			octaves = 1,
-		},
-		stratum_thickness = 4,
-		biomes = {"desert"},
-	})
-
-	minetest.register_ore({
-		ore_type        = "stratum",
-		ore             = "default:desert_sandstone",
-		wherein         = {"default:desert_stone"},
-		clust_scarcity  = 1,
-		y_max           = 42,
-		y_min           = 6,
-		noise_params    = {
-			offset = 24,
-			scale = 16,
-			spread = {x = 128, y = 128, z = 128},
-			seed = 90122,
-			octaves = 1,
-		},
-		stratum_thickness = 2,
-		biomes = {"desert"},
-	})
-
-	-- Sandstone
-
-	minetest.register_ore({
-		ore_type        = "stratum",
-		ore             = "default:sandstone",
-		wherein         = {"default:desert_stone"},
-		clust_scarcity  = 1,
-		y_max           = 39,
-		y_min           = 3,
-		noise_params    = {
-			offset = 21,
-			scale = 16,
-			spread = {x = 128, y = 128, z = 128},
-			seed = 90122,
-			octaves = 1,
-		},
-		stratum_thickness = 2,
-		biomes = {"desert"},
-	})
-
 	-- Gravel
 
 	minetest.register_ore({
@@ -246,41 +147,6 @@ function default.register_ores()
 		y_min          = -31000,
 	})
 
-	-- Mese crystal
-
-	minetest.register_ore({
-		ore_type       = "scatter",
-		ore            = "default:stone_with_mese",
-		wherein        = "default:stone",
-		clust_scarcity = 14 * 14 * 14,
-		clust_num_ores = 5,
-		clust_size     = 3,
-		y_max          = 31000,
-		y_min          = 1025,
-	})
-
-	minetest.register_ore({
-		ore_type       = "scatter",
-		ore            = "default:stone_with_mese",
-		wherein        = "default:stone",
-		clust_scarcity = 18 * 18 * 18,
-		clust_num_ores = 3,
-		clust_size     = 2,
-		y_max          = -512,
-		y_min          = -1023,
-	})
-
-	minetest.register_ore({
-		ore_type       = "scatter",
-		ore            = "default:stone_with_mese",
-		wherein        = "default:stone",
-		clust_scarcity = 14 * 14 * 14,
-		clust_num_ores = 5,
-		clust_size     = 3,
-		y_max          = -1024,
-		y_min          = -31000,
-	})
-
 	-- Diamond
 
 	minetest.register_ore({
@@ -313,41 +179,6 @@ function default.register_ores()
 		clust_num_ores = 4,
 		clust_size     = 3,
 		y_max          = -2048,
-		y_min          = -31000,
-	})
-
-	-- Mese block
-
-	minetest.register_ore({
-		ore_type       = "scatter",
-		ore            = "default:mese",
-		wherein        = "default:stone",
-		clust_scarcity = 36 * 36 * 36,
-		clust_num_ores = 3,
-		clust_size     = 2,
-		y_max          = 31000,
-		y_min          = 1025,
-	})
-
-	minetest.register_ore({
-		ore_type       = "scatter",
-		ore            = "default:mese",
-		wherein        = "default:stone",
-		clust_scarcity = 36 * 36 * 36,
-		clust_num_ores = 3,
-		clust_size     = 2,
-		y_max          = -2048,
-		y_min          = -4095,
-	})
-
-	minetest.register_ore({
-		ore_type       = "scatter",
-		ore            = "default:mese",
-		wherein        = "default:stone",
-		clust_scarcity = 28 * 28 * 28,
-		clust_num_ores = 5,
-		clust_size     = 3,
-		y_max          = -4096,
 		y_min          = -31000,
 	})
 end
@@ -730,32 +561,12 @@ function default.register_decorations()
 			spread = {x = 250, y = 250, z = 250},
 			seed = 2,
 			octaves = 3,
-			persist = 0.66
+			persist = 0.5
 		},
 		biomes = {"taiga"},
 		y_max = 31000,
 		y_min = 4,
 		schematic = minetest.get_modpath("default") .. "/schematics/tree_3a.mts",
-		flags = "place_center_x, place_center_z",
-	})
-
-	minetest.register_decoration({
-		name = "default:small_pine_tree",
-		deco_type = "schematic",
-		place_on = {"default:dirt_with_snow", "default:dirt_with_coniferous_litter"},
-		sidelen = 16,
-		noise_params = {
-			offset = 0.010,
-			scale = -0.048,
-			spread = {x = 250, y = 250, z = 250},
-			seed = 2,
-			octaves = 3,
-			persist = 0.66
-		},
-		biomes = {"taiga", "coniferous_forest"},
-		y_max = 31000,
-		y_min = 4,
-		schematic = minetest.get_modpath("default") .. "/schematics/small_pine_tree.mts",
 		flags = "place_center_x, place_center_z",
 	})
 

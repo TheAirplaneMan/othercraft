@@ -262,7 +262,7 @@ minetest.register_craftitem("default:clay_brick", {
 })
 
 minetest.register_craftitem("default:clay_lump", {
-	description = S("Clay Lump"),
+	description = ("Clayball"),
 	inventory_image = "default_clay_lump.png",
 })
 

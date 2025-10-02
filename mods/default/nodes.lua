@@ -320,7 +320,7 @@ minetest.register_node("default:dirt", {
 	_tnt_loss = 3,
 })
 
-minetest.register_node("default:arid_dirt", {
+minetest.register_node("default:red_dirt", {
 	description = ("Arid Dirt"),
 	tiles = {"default_aridisol.png"}, -- Change later
 	groups = {crumbly = 3, soil = 1},

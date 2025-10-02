@@ -314,9 +314,9 @@ function default.register_biomes()
 
 	minetest.register_biome({
 		name = "outback",
-		node_top = "default:arid_dirt",
+		node_top = "default:red_dirt",
 		depth_top = 1,
-		node_filler = "default:arid_dirt",
+		node_filler = "default:red_dirt",
 		depth_filler = 1,
 		node_riverbed = "default:sand",
 		depth_riverbed = 2,
@@ -575,7 +575,7 @@ function default.register_decorations()
 	minetest.register_decoration({
 		name = "default:tree_4a",
 		deco_type = "schematic",
-		place_on = {"default:arid_dirt"},
+		place_on = {"default:red_dirt"},
 		sidelen = 16,
 		noise_params = {
 			offset = 0,

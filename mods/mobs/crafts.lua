@@ -85,71 +85,6 @@ core.register_craftitem("mobs:leather", {
 	groups = {flammable = 2, leather = 1}
 })
 
--- raw meat
-
-core.register_craftitem("mobs:meat_raw", {
-	description = S("Raw Meat"),
-	inventory_image = "mobs_meat_raw.png",
-	on_use = core.item_eat(3),
-	groups = {food_meat_raw = 1}
-})
-
-mobs.add_eatable("mobs:meat_raw", 3)
-
--- cooked meat
-
-core.register_craftitem("mobs:meat", {
-	description = S("Meat"),
-	inventory_image = "mobs_meat.png",
-	on_use = core.item_eat(8),
-	groups = {food_meat = 1}
-})
-
-mobs.add_eatable("mobs:meat", 8)
-
-core.register_craft({
-	type = "cooking",
-	output = "mobs:meat",
-	recipe = "mobs:meat_raw",
-	cooktime = 5
-})
-
--- lasso
-
-core.register_tool("mobs:lasso", {
-	description = S("Lasso (right-click animal to put in inventory)"),
-	inventory_image = "mobs_magic_lasso.png",
-	groups = {flammable = 2}
-})
-
-core.register_craft({
-	output = "mobs:lasso",
-	recipe = {
-		{ items.string, "", items.string},
-		{ "", items.diamond, "" },
-		{ items.string, "", items.string }
-	}
-})
-
-core.register_alias("mobs:magic_lasso", "mobs:lasso")
-
--- net
-
-core.register_tool("mobs:net", {
-	description = S("Net (right-click animal to put in inventory)"),
-	inventory_image = "mobs_net.png",
-	groups = {flammable = 2}
-})
-
-core.register_craft({
-	output = "mobs:net",
-	recipe = {
-		{ items.stick, "", items.stick },
-		{ items.stick, "", items.stick },
-		{ items.string, items.stick, items.string }
-	}
-})
-
 -- shears (right click to shear animal)
 
 core.register_tool("mobs:shears", {
@@ -163,59 +98,6 @@ core.register_craft({
 	recipe = {
 		{ "", items.steel_ingot, "" },
 		{ "", items.stick, items.steel_ingot }
-	}
-})
-
--- protection rune
-
-core.register_craftitem("mobs:protector", {
-	description = S("Mob Protection Rune"),
-	inventory_image = "mobs_protector.png",
-	groups = {flammable = 2}
-})
-
-core.register_craft({
-	output = "mobs:protector",
-	recipe = {
-		{ items.stone, items.stone, items.stone },
-		{ items.stone, items.gold_block, items.stone },
-		{ items.stone, items.stone, items.stone }
-	}
-})
-
--- protection rune (level 2)
-
-core.register_craftitem("mobs:protector2", {
-	description = S("Mob Protection Rune (Level 2)"),
-	inventory_image = "mobs_protector2.png",
-	groups = {flammable = 2}
-})
-
-core.register_craft({
-	output = "mobs:protector2",
-	recipe = {
-		{ "mobs:protector", items.mese_crystal, "mobs:protector" },
-		{ items.mese_crystal, items.diamond_block, items.mese_crystal },
-		{ "mobs:protector", items.mese_crystal, "mobs:protector" }
-	}
-})
-
--- mob repellent node
-
-core.register_node("mobs:mob_repellent", {
-	description = S("Mob Repellent (Stops mobs spawning within 16 block radius)"),
-	tiles = {"mobs_repellent.png"},
-	is_ground_content = false,
-	groups = {handy = 1, cracky = 3},
-	sounds = mobs.node_sound_stone_defaults()
-})
-
-core.register_craft({
-	output = "mobs:mob_repellent",
-	recipe = {
-		{ items.obsidian, items.dye_red, items.obsidian },
-		{ items.obsidian, "mobs:protector", items.obsidian },
-		{ items.obsidian, items.obsidian, items.obsidian }
 	}
 })
 
@@ -233,46 +115,6 @@ core.register_craft({
 		{"group:leather", "group:leather", "group:leather"},
 		{"group:leather", items.steel_ingot, "group:leather"},
 		{"group:leather", items.steel_ingot, "group:leather"}
-	}
-})
-
--- register mob fence if default found
-
-if mod_def and default.register_fence then
-
-	-- mob fence (looks like normal fence but collision is 2 high)
-	default.register_fence("mobs:fence_wood", {
-		description = S("Mob Fence"),
-		texture = "default_wood.png",
-		material = "default:fence_wood",
-		groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
-		sounds = mobs.node_sound_wood_defaults(),
-		collision_box = {
-			type = "fixed", fixed = {{-0.5, -0.5, -0.5, 0.5, 1.9, 0.5}}
-		}
-	})
-end
-
--- mob fence top (has enlarged collisionbox to stop mobs getting over)
-
-core.register_node("mobs:fence_top", {
-	description = S("Mob Fence Top"),
-	drawtype = "nodebox",
-	tiles = {"default_wood.png"},
-	paramtype = "light",
-	is_ground_content = false,
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, axey = 1},
-	sounds = mobs.node_sound_wood_defaults(),
-	node_box = {type = "fixed", fixed = {-0.2, -0.5, -0.2, 0.2, 0, 0.2}},
-	collision_box = {type = "fixed", fixed = {-0.4, -1.5, -0.4, 0.4, 0, 0.4}},
-	selection_box = {type = "fixed", fixed = {-0.4, -1.5, -0.4, 0.4, 0, 0.4}}
-})
-
-core.register_craft({
-	output = "mobs:fence_top 12",
-	recipe = {
-		{"group:wood", "group:wood", "group:wood"},
-		{"", items.fence_wood, ""}
 	}
 })
 

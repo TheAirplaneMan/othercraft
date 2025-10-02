@@ -462,7 +462,7 @@ function default.register_biomes()
 	-- Cold desert
 
 	minetest.register_biome({
-		name = "cold_desert",
+		name = "snowy_desert",
 		node_dust = "default:snow",
 		node_top = "default:sand",
 		depth_top = 1,
@@ -821,7 +821,7 @@ function default.register_decorations()
 			octaves = 3,
 			persist = 1,
 		},
-		biomes = {"desert"},
+		biomes = {"desert", "snowy_desert"},
 		y_max = 31000,
 		y_min = 4,
 		decoration = "default:cactus",

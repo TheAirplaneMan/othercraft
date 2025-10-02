@@ -229,10 +229,10 @@ end)
 -- Craftitem registry
 --
 
-minetest.register_craftitem("default:blueberries", {
-	description = S("Blueberries"),
-	inventory_image = "default_blueberries.png",
-	groups = {food_blueberries = 1, food_berry = 1},
+minetest.register_craftitem("default:apple", {
+	description = S("Apple"),
+	inventory_image = "default_apple.png",
+	groups = {food_apple = 1},
 	on_use = minetest.item_eat(2),
 })
 

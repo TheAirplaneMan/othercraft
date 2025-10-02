@@ -8,9 +8,10 @@ mobs:register_mob("otcr_mobs:pig", {
 	visual_size = {x=2.5, y=2.5},
 	visual = "mesh",
 	mesh = "mobs_mc_pig.b3d",
-	textures = {
-		{"mobs_mc_pig.png"}
-	},
+	textures = { {
+		"blank.png",
+		"mobs_mc_pig.png",
+	}, },
 	makes_footstep_sound = true,
 --	sounds = {
 --		random = "mobs_pig",
@@ -20,8 +21,7 @@ mobs:register_mob("otcr_mobs:pig", {
 	jump_height = 6,
 	pushable = true,
 	drops = {
-		{name = "otcr_mobs:pork_raw", chance = 1, min = 1, max = 3},
-		{name = "mobs:leather", chance = 1, min = 0, max = 2}
+		{name = "otcr_mobs:pork_raw", chance = 1, min = 1, max = 3}
 	},
 	water_damage = 0.01,
 	lava_damage = 4,

@@ -60,7 +60,7 @@ mobs:spawn({
 	name = "otcr_mobs:sneakster",
 	nodes = {"group:cracky", "group:crumbly", "group:choppy"},
 	max_light = 7,
-	chance = 6000,
+	chance = 3000,
         max_height = 256,
 	min_height = -31000
 })

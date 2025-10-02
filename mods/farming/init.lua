@@ -31,12 +31,6 @@ farming.register_plant("farming:wheat", {
 	place_param2 = 3,
 })
 
-minetest.register_craftitem("farming:flour", {
-	description = S("Flour"),
-	inventory_image = "farming_flour.png",
-	groups = {food_flour = 1, flammable = 1},
-})
-
 minetest.register_craftitem("farming:bread", {
 	description = S("Bread"),
 	inventory_image = "farming_bread.png",
@@ -45,18 +39,11 @@ minetest.register_craftitem("farming:bread", {
 })
 
 minetest.register_craft({
-	type = "shapeless",
-	output = "farming:flour",
-	recipe = {"farming:wheat", "farming:wheat", "farming:wheat", "farming:wheat"}
-})
-
-minetest.register_craft({
-	type = "cooking",
-	cooktime = 15,
 	output = "farming:bread",
-	recipe = "farming:flour"
+	recipe = {
+		{"farming:wheat", "farming:wheat", "farming:wheat"},
+	}
 })
-
 
 -- Cotton
 

@@ -34,9 +34,16 @@ mobs:register_mob("otcr_mobs:chicken", {
 		run_start = 0,		run_end = 40,
 	},
 	follow = {
-		"farming:wheat_seed"
+		"farming:seed_wheat"
 	},
-	view_range = 8
+	view_range = 8,
+
+	on_rightclick = function(self, clicker)
+
+		if mobs:feed_tame(self, clicker, 1, true, true) then return end
+		if mobs:protect(self, clicker) then return end
+		if mobs:capture_mob(self, clicker, 0, 5, 50, false, nil) then return end
+	end
 })
 
 -- where to spawn

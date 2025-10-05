@@ -362,7 +362,7 @@ function default.register_biomes()
 		node_dungeon_alt = "default:mossycobble",
 		node_dungeon_stair = "stairs:stair_cobble",
 		y_max = 0,
-		y_min = -256,
+		y_min = -255,
 		heat_point = 50,
 		humidity_point = 50,
 	})
@@ -518,7 +518,7 @@ function default.register_decorations()
 			octaves = 3,
 			persist = 0.004
 		},
-		biomes = {"forest"},
+		biomes = {"forest", "rainforest"},
 		y_max = 31000,
 		y_min = 1,
 		schematic = minetest.get_modpath("default") .. "/schematics/apple_tree.mts",
@@ -575,7 +575,7 @@ function default.register_decorations()
 	minetest.register_decoration({
 		name = "default:tree_4a",
 		deco_type = "schematic",
-		place_on = {"default:red_dirt"},
+		place_on = {"default:red_dirt", "default:dirt_with_grass"},
 		sidelen = 16,
 		noise_params = {
 			offset = 0,
@@ -585,7 +585,7 @@ function default.register_decorations()
 			octaves = 3,
 			persist = 0.65
 		},
-		biomes = {"outback"},
+		biomes = {"outback", "rainforest"},
 		y_max = 31000,
 		y_min = 1,
 		schematic = minetest.get_modpath("default") .. "/schematics/tree_4a.mts",
@@ -660,6 +660,29 @@ function default.register_decorations()
 		y_min = 1,
 		decoration = "default:dry_shrub",
 		param2 = 4,
+	})
+
+
+--      Erosion
+
+	minetest.register_decoration({
+		deco_type = "simple",
+		place_on = {"default:dirt_with_grass"},
+		sidelen = 4,
+		noise_params = {
+			offset = -0.8,
+			scale = 0.5,
+			spread = {x = 100, y = 100, z = 100},
+			seed = 53995,
+			octaves = 3,
+			persist = 0.1
+		},
+		biomes = {"grassland"},
+		y_max = 31000,
+		y_min = 2,
+		decoration = "air",
+		place_offset_y = -1,
+		flags = "force_placement",
 	})
 end
 

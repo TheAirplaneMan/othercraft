@@ -363,8 +363,8 @@ minetest.register_node("default:sand", {
 minetest.register_node("default:gravel", {
 	description = S("Gravel"),
 	tiles = {"default_gravel.png"},
-	groups = {crumbly = 2, falling_node = 1},
-	sounds = default.node_sound_gravel_defaults(),
+	groups = {crumbly = 3, falling_node = 1},
+	sounds = default.node_sound_dirt_defaults(),
 	drop = {
 		max_items = 1,
 		items = {
@@ -381,8 +381,8 @@ minetest.register_node("default:gravel", {
 minetest.register_node("default:ocean_gravel", {
 	description = ("Ocean Gravel"),
 	tiles = {"default_gravel.png"},
-	groups = {crumbly = 2, falling_node = 1},
-	sounds = default.node_sound_gravel_defaults(),
+	groups = {crumbly = 3, falling_node = 1},
+	sounds = default.node_sound_dirt_defaults(),
 	drop = {
 		max_items = 1,
 		items = {
@@ -1454,8 +1454,6 @@ minetest.register_node("default:glass", {
 
 minetest.register_node("default:brick", {
 	description = S("Brick Block"),
-	paramtype2 = "facedir",
-	place_param2 = 0,
 	tiles = {
 		"default_brick.png^[transformFX",
 		"default_brick.png",
@@ -1496,13 +1494,74 @@ default.register_leafdecay({
 
 default.register_leafdecay({
 	trunks = {"default:tree_3"},
-	leaves = {"default:tree_3"},
+	leaves = {"default:leaves_3"},
 	radius = 3,
 })
 
 default.register_leafdecay({
 	trunks = {"default:tree_4"},
-	leaves = {"default:tree_4"},
+	leaves = {"default:leaves_4"},
 	radius = 3,
 })
 
+
+
+
+
+-- Marble and Blackstone
+
+minetest.register_node("default:marble_pillar", {
+	description = ("Marble Pillar"),
+	tiles = {"default_marble_pillar_top.png", "default_marble_pillar_top.png",
+		"default_marble_pillar.png"},
+	drawtype = "nodebox",
+	use_texture_alpha = "clip",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-7/16, -8/16, -7/16,  7/16, 8/16,  7/16}, -- Main body
+			{-8/16, -8/16, -7/16,  8/16, 8/16, -7/16}, -- Spikes
+			{-8/16, -8/16,  7/16,  8/16, 8/16,  7/16}, -- Spikes
+			{-7/16, -8/16, -8/16, -7/16, 8/16,  8/16}, -- Spikes
+			{7/16,  -8/16,  8/16,  7/16, 8/16, -8/16}, -- Spikes
+		},
+	},
+	collision_box = {
+		type = "fixed",
+		fixed = {-7/16, -8/16, -7/16,  7/16, 7/16,  7/16}, -- Main body. slightly lower than node box
+	},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{-7/16, -8/16, -7/16, 7/16, 8/16, 7/16},
+		},
+	},
+	paramtype = "light",
+	sunlight_propagates = true,
+	groups = {cracky = 3},
+	sounds = default.node_sound_stone_defaults(),
+
+	after_dig_node = function(pos, node, metadata, digger)
+		default.dig_up(pos, node, digger)
+	end,
+})
+
+minetest.register_node("default:marble", {
+	description = ("Marble"),
+	tiles = {"default_marble.png"},
+	groups = {cracky = 3},
+	sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_node("default:netherrock", {
+	description = ("Netherrock"),
+	tiles = {"default_netherrock.png"},
+	groups = {cracky = 3},
+	sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_node("default:bedrock", {
+	description = ("Bedrock"),
+	tiles = {"default_bedrock.png"},
+	sounds = default.node_sound_stone_defaults(),
+})

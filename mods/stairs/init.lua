@@ -272,7 +272,7 @@ my_register_stair_and_slab(
 	"Wooden Stair",
 	"Wooden Slab",
 	default.node_sound_wood_defaults(),
-	false
+	true
 )
 
 my_register_stair_and_slab(
@@ -294,7 +294,7 @@ my_register_stair_and_slab(
 	"Stone Brick Stair",
 	"Stone Brick Slab",
 	default.node_sound_stone_defaults(),
-	false
+	true
 )
 
 my_register_stair_and_slab(
@@ -305,7 +305,18 @@ my_register_stair_and_slab(
 	"Brick Stair",
 	"Brick Slab",
 	default.node_sound_stone_defaults(),
-	false
+	true
+)
+
+my_register_stair_and_slab(
+	"marble",
+	"default:marble",
+	{cracky = 3},
+	{"default_marble.png"},
+	"Marble Stair",
+	"Marble Slab",
+	default.node_sound_stone_defaults(),
+	true
 )
 
 -- Dummy calls to S() to allow translation scripts to detect the strings.

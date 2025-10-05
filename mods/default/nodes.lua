@@ -301,6 +301,15 @@ minetest.register_node("default:mossycobble", {
 	_tnt_loss = 4,
 })
 
+minetest.register_node("default:sandstone", {
+	description = S("Sandstone"),
+	tiles = {"default_sandstone_top.png", "default_sandstone_bottom.png", "default_sandstone.png"},
+	is_ground_content = false,
+	groups = {cracky = 3},
+	sounds = default.node_sound_stone_defaults(),
+	_tnt_loss = 4,
+})
+
 minetest.register_node("default:obsidian", {
 	description = S("Obsidian"),
 	tiles = {"default_obsidian.png"},

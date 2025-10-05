@@ -275,9 +275,9 @@ function default.register_biomes()
 	minetest.register_biome({
 		name = "desert",
 		node_top = "default:sand",
-		depth_top = 1,
-		node_filler = "default:sand",
-		depth_filler = 1,
+		depth_top = 2,
+		node_filler = "default:sandstone",
+		depth_filler = 3,
 		node_stone = "default:stone",
 		node_riverbed = "default:sand",
 		depth_riverbed = 2,
@@ -290,15 +290,15 @@ function default.register_biomes()
 		humidity_point = 16,
 	})
 
-	-- Cold desert
+	-- Snowy desert
 
 	minetest.register_biome({
 		name = "snowy_desert",
 		node_dust = "default:snow",
 		node_top = "default:sand",
-		depth_top = 1,
-		node_filler = "default:sand",
-		depth_filler = 1,
+		depth_top = 2,
+		node_filler = "default:sandstone",
+		depth_filler = 3,
 		node_riverbed = "default:sand",
 		depth_riverbed = 2,
 		node_dungeon = "default:cobble",

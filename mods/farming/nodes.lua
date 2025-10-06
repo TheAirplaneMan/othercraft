@@ -162,3 +162,37 @@ for i = 1, 5 do
 		}
 	}})
 end
+
+
+
+-- Pumpkin
+
+minetest.register_node("farming:pumpkin", {
+	description = ("Pumpkin"),
+	tiles = {"farming_pumpkin_top.png", "farming_pumpkin_top.png", "farming_pumpkin.png",
+		"farming_pumpkin.png", "farming_pumpkin.png", "farming_pumpkin_front.png"},
+	is_ground_content = false,
+	paramtype2 = "facedir",
+	groups = {choppy = 3, oddly_breakable_by_hand = 3},
+	sounds = default.node_sound_wood_defaults(),
+})
+
+minetest.register_node("farming:pumpkin_lantern", {
+	description = ("Pumpkin Lantern"),
+	paramtype = "light",
+	sunlight_propagates = true,
+	tiles = {"farming_pumpkin_lantern_top.png", "farming_pumpkin_lantern_top.png", "farming_pumpkin.png",
+		"farming_pumpkin.png", "farming_pumpkin.png", "farming_pumpkin_lantern_front.png"},
+	is_ground_content = false,
+	paramtype2 = "facedir",
+	groups = {choppy = 3, oddly_breakable_by_hand = 3},
+	sounds = default.node_sound_wood_defaults(),
+	light_source = default.LIGHT_MAX,
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = "farming:pumpkin_lantern",
+	recipe = {"farming:pumpkin", "default:torch"}
+})
+
